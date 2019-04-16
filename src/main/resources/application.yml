@@ -1,0 +1,44 @@
+kafka:
+  #    address: 10.1.116.23:6667,10.1.116.24:6667,10.1.116.25:6667,10.1.116.26:6667,10.1.116.27:6667,10.1.116.28:6667
+  address: 10.1.116.105:9092,10.1.116.106:9092,10.1.116.124:9092
+  # topic名为模型管理对应模型中节点配置中的topic
+  topic: linkdata__pidatabase__node__2681
+  # topic: monitor_pi
+redis:
+  address: 10.1.116.14:7001,10.1.116.14:7002,10.1.116.15:7003,10.1.116.15:7004,10.1.116.16:7005,10.1.116.16:7006
+  # syscodes: gh_znzd,gh_sbgzyj,analysis
+  # 测试redis: gh_znzd_dev
+  #  数据库索引（默认为0）
+  database: 0
+  pool:
+    # 连接池最大连接数（使用负值表示没有限制）
+    max-active: 8
+    # 连接池最大阻塞等待时间（使用负值表示没有限制）
+    max-wait: -1
+    # 连接池中的最大空闲连接
+    max-idle: 8
+    # 连接池中的最小空闲连接
+    min-idle: 0
+  # 链接超时时间（毫秒）
+  timeout: 0
+  commandTimeout: 5000
+#是否启用缓存
+redisCache: true
+
+#三河发电有限责任公司                        1201268100000001        10.1.0.132          192.168.9.101
+#浙江国华浙能发电有限公司                 1201268900000001        10.1.72.135         192.168.9.39       
+#河北国华定州发电有限责任公司          1201270700000001        10.1.152.181        192.168.9.36
+#神华广东国华粤电台山发电有限公司  1201271300000001        10.1.58.106         192.168.9.34 
+pidata:
+  plant: 1201268100000001
+  ip: 10.1.0.132
+  table: test_sxdb_reallydata_message
+spring:
+  datasource:
+    url: jdbc:mysql://10.1.116.10:3306/test?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+    #url: jdbc:mysql://192.168.9.80:3306/gh_sjzl?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+    username: gh_sjzl
+    #username: root
+    password: GuoHuadcloud@2018
+    #password: linkdata321
+    driver-class-name: com.mysql.jdbc.Driver
