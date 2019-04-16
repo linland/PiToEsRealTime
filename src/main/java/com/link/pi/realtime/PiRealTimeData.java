@@ -97,6 +97,7 @@ public class PiRealTimeData {
               PIClient.INSTANCE.pisn_evmdisestablish(conn_count, piTagArray);
               logger.error("重新注册,删除注册信息  count is " + conn_count.getValue() + " PiStateFlag is " + jedisCluster.get("PiStateFlag") + "  hashCode is " + jedisCluster.get("PiStateFlag").hashCode() + " :" + piMethod.getMessage(piConnectStatus, "pisn_evmexceptionsx"));
               list.clear();
+              piConnectStatus = PIClient.INSTANCE.piut_setservernode(piServer);
               break;
             }
             count = new IntByReference(evm_count); //监听到多少个测点发生变化
